@@ -1,8 +1,6 @@
 .header {
   max-width: none;
   width: 100%;
-  text-transform: capitalize;
-  text-transform: uppercase;
   margin-bottom: 4rem;
 }
 
@@ -23,6 +21,7 @@
   font-size: var(--text-xl);
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 .site-title a {
@@ -41,6 +40,7 @@
   font-size: var(--text-base);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  text-transform: capitalize;
 }
 
 .nav__list a {
