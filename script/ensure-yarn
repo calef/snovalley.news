@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+./script/ensure-node
+npm install --global yarn

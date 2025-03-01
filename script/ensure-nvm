@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -e # exit if any command fails
+OS="$(uname)"
+if [ "$OS" == "Darwin" ]; then
+  ./script/ensure-homebrew
+  brew install nvm
+elif [ "$OS" == "Linux" ]; then
+  . /etc/os-release
+  if [ "$ID" == "ubuntu" ]; then
+    ./script/ensure-wget
+    wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+  else
+    echo "This script supports only ubuntu." >&2
+    exit 1
+  fi
+else
+  echo "Unsupported operating system: $OS" >&2
+  exit 1
+fi
